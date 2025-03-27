@@ -27,3 +27,11 @@
 ### Copier des ressources dans un conteneur:
 
 - `docker cp <path_fichier> <nom ou id conteneur>:<path_destination_fichier>`
+
+### Créer une image à partir d'un conteneur:
+
+- `docker commit <id_ou_nom_conteneur> <adresse/nom_image:tag>`
+
+### Créer une image à partir d'un dockerfile:
+
+- docker build -t <nom_image> <context_execution>
