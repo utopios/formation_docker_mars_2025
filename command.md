@@ -7,6 +7,7 @@
 - `-d` : détaché
 - `--name`: nom du conteneur
 - `-it`: shell interactif
+- `-p`: mappage des ports
 
 ### Liste des conteneurs :
 

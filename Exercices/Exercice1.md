@@ -18,6 +18,6 @@ This is a PHP application running in a container.
 ```
 
 - Lancer un conteneur PHP
-    - Utilisez l’image officielle PHP avec Apache et copier le fichier dans le conteneur.
+    - Utilisez l’image officielle PHP avec Apache et copiez le fichier dans le conteneur.
 
 - Interagir avec le conteneur
