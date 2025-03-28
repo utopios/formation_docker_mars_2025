@@ -1,0 +1,7 @@
+services:
+  symfony:
+    extends:
+      file: docker-compose.yaml
+      service: symfony
+      environment:
+        - NEW_VAR=val
