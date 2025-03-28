@@ -34,4 +34,12 @@
 
 ### Créer une image à partir d'un dockerfile:
 
-- docker build -t <nom_image> <context_execution>
+- `docker build -t <nom_image> <context_execution>`
+
+### Lister les réseaux sur docker
+
+- `docker network ls`
+
+### Connecter un conteneur à un réseau:
+
+- `docker network connect <reseau> <conteneur>`
