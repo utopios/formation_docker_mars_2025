@@ -9,6 +9,8 @@ services:
       - VAR1={$VAR1}
     volumes:
       - symfony-volume:/var/www/html/public
+    networks:
+      - network1
 
   nginx:
     image: nginx
@@ -18,6 +20,8 @@ services:
       - nginx-volume:/var/www/html
     depends_on:
       - symfony
+    networks:
+      - network1
 
 
 volumes:
