@@ -1,1 +1,1 @@
-* * * * * /scripts/log-date.sh
+* * * * * bash -c "/scripts/log-date.sh"
