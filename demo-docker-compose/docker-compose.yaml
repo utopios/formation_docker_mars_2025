@@ -1,0 +1,8 @@
+services:
+  symfony:
+    build:
+      context: .
+      dockerfile: Dockerfile
+  
+  nginx:
+    image: nginx
