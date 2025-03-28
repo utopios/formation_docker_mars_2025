@@ -6,9 +6,9 @@ services:
   db:
     image: postgres:9.4
     environment:
-      - POSTGRES_USER=postgres
-      - POSTGRES_PASSWORD=postgres
-      - POSTGRES_DB=postgres  
+      - POSTGRES_USER=${POSTGRES_USER}
+      - POSTGRES_PASSWORD=${POSTGRES_PASSWORD}
+      - POSTGRES_DB=${POSTGRES_DB}  
     volumes:
       - "data-postgres:/var/lib/postgresql/data"
     networks:
@@ -17,12 +17,19 @@ services:
     build: 
       context: ./worker
       dockerfile: Dockerfile
+    #user: "admin:admin"
     depends_on:
       - db
       - redis
     networks:
       - front
       - back
+    
+    cap_drop:
+      - ALL
+    cap_add:
+      - NET_ADMIN
+
     deploy:
       resources: 
         limits:
