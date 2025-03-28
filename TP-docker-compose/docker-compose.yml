@@ -1,0 +1,25 @@
+services:
+  redis:
+    image: redis:5.0-alpine3.10
+  db:
+    image: postgres:9.4
+    environment:
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=postgres
+      - POSTGRES_DB=postgres  
+  worker:
+    build: 
+      context: ./worker
+      dockerfile: Dockerfile
+  vote:
+    build: 
+      context: ./vote
+      dockerfile: Dockerfile
+    ports:
+      - "8088:80"
+  result:
+    build: 
+      context: ./result
+      dockerfile: Dockerfile
+    ports:
+      - "8089:4000"
