@@ -3,6 +3,30 @@ services:
     build:
       context: .
       dockerfile: Dockerfile
-  
+    ports:
+      - "8082:80"
+    environment:
+      - VAR1={$VAR1}
+    volumes:
+      - symfony-volume:/var/www/html/public
+
   nginx:
     image: nginx
+    ports:
+      - "8083:80"
+    volumes:
+      - nginx-volume:/var/www/html
+    depends_on:
+      - symfony
+
+
+volumes:
+  nginx-volume:
+    driver: local
+  
+  symfony-volume:
+    driver: local
+
+networks:
+  network1: 
+    driver: bridge
