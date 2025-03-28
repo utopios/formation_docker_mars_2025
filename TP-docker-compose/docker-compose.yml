@@ -44,7 +44,7 @@ services:
       context: ./vote
       dockerfile: Dockerfile
     ports:
-      - "8088:80"
+      - "8090-8092:80"
     depends_on:
       - redis
     networks:
